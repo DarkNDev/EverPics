@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText"
+    tools:context=".ui.details.DetailsFragment">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="true" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/image_card"
+            style="?attr/materialCardViewElevatedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/image_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    tools:scaleType="centerCrop"
+                    tools:src="@drawable/error" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_alignBottom="@id/image_view"
+                    android:background="@drawable/gradient" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/likes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/image_view"
+                    android:layout_margin="12dp"
+                    android:drawablePadding="4dp"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:textAppearance="?attr/textAppearanceBodyLarge"
+                    android:textColor="@color/white"
+                    app:drawableStartCompat="@drawable/like"
+                    app:drawableTint="@color/white"
+                    tools:text="Likes" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/dimensions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@id/image_view"
+                    android:layout_alignBottom="@id/image_view"
+                    android:layout_margin="12dp"
+                    android:textAppearance="?attr/textAppearanceBodyLarge"
+                    android:textColor="@color/white"
+                    tools:text="1920x1080" />
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/image_details"
+            style="?attr/materialCardViewElevatedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceTitleLarge"
+                    tools:text="Description" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/creation_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/description"
+                    android:layout_marginBottom="8dp"
+                    android:textAppearance="?attr/textAppearanceBodyLarge"
+                    tools:text="Creation Time" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/profile_view"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_below="@id/creation_time"
+                    android:adjustViewBounds="true"
+                    tools:scaleType="centerCrop"
+                    tools:src="@drawable/person" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/creator_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/creation_time"
+                    android:layout_marginTop="8dp"
+                    android:layout_toStartOf="@id/visit_unsplash"
+                    android:layout_toEndOf="@id/profile_view"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textAppearance="?attr/textAppearanceTitleMedium"
+                    tools:text="Creator Name" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/creator_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/creator_name"
+                    android:layout_toStartOf="@id/visit_unsplash"
+                    android:layout_toEndOf="@id/profile_view"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    tools:text="\@Username" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/visit_unsplash"
+                    style="?attr/materialIconButtonFilledTonalStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/creation_time"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="8dp"
+                    android:contentDescription="Visit Unsplash"
+                    app:icon="@drawable/unsplash" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/download"
+                    style="?attr/materialIconButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/profile_view"
+                    android:layout_marginTop="8dp"
+                    android:contentDescription="Download"
+                    app:icon="@drawable/download" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/visit"
+                    style="?attr/materialIconButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/profile_view"
+                    android:layout_marginTop="8dp"
+                    android:layout_toEndOf="@id/download"
+                    android:contentDescription="Visit Photo"
+                    app:icon="@drawable/internet" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/bookmark"
+                    style="?attr/materialIconButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/profile_view"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="8dp"
+                    android:checkable="true"
+                    app:icon="@drawable/bookmark_state" />
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.core.widget.NestedScrollView>

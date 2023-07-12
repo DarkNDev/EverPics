@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/galleryFragment"
+            android:icon="@drawable/collections"
+            android:title="EverPics" />
+
+        <item
+            android:id="@+id/bookmarkFragment"
+            android:icon="@drawable/bookmark"
+            android:title="Bookmarks" />
+
+    </group>
+
+</menu>
