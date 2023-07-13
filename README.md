@@ -17,4 +17,12 @@ https://github.com/DarkNDev/EverPics/assets/49820671/0b4d62f8-a9cf-49ff-91ba-21e
 
 
 ### Libraries Used
-Material 3, Navigation Component, Kotlin coroutines, Room Database, Lifecycle (ViewModel + LiveData), Dagger Hilt, Glide, Retrofit 2, Paging 3.
+1. Material 3
+2. Navigation Component
+3. Kotlin coroutines
+4. Room Database
+5. Lifecycle (ViewModel + LiveData)
+6. Dagger Hilt
+7. Glide
+8. Retrofit 2
+9. Paging 3
